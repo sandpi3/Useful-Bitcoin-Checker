@@ -32,20 +32,22 @@
 }
 
 .header {
-    color:orangered;
-}
-
-.answertext {
-    color:orange;
+    color: #ffff00;
 }
 
 .division {
     text-align: center;
 }
 
+.price{
+    font-size: 10px;
+}
+
 body{
-    width:300px;
-    height:175px;
+    width:275px;
+    height:150px;
     text-align: center;
+
+    background:  #ff6600;
 
  }
