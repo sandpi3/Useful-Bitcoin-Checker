@@ -25,17 +25,19 @@ function check(){
 
     var answer;
 
+    var pElement = document.getElementById('answer');
     if (current > open){
         answer = "Yes";
+        pElement.setAttribute("style", "font-weight: bold; color: #00ff00;")
     }else{
         answer = "No"
+        pElement.setAttribute("style", "font-weight: bold; color: #ff0000;")
     }
 
-    var pElement = document.getElementById('answer');
     pElement.textContent = answer;
 
     var cElement = document.getElementById('cprice');
-    cElement.textContent = current;
+    cElement.textContent = "Current exchange to USD: $" + current;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
