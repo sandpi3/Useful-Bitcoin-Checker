@@ -5,7 +5,7 @@ function check(){
     var s;
 
     var open;
-    var current;
+    var current = "0.0";
 
     $.ajax({url: bitcoinOpen, dataType: 'json', async: false, success:function(data) {
         var i = 0;
@@ -23,7 +23,7 @@ function check(){
         current = current.replace(",", "");
     }});
 
-    var answer;
+    var answer = "Unknown";
 
     var pElement = document.getElementById('answer');
     if (current > open){
