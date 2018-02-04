@@ -42,6 +42,7 @@ function check(){
 
     var pElement = document.getElementById('answer');
     var rElement = document.getElementById('reaction');
+    var cConversion = document.getElementById('cconversion');
     if (suggest == "Buy"){
         answer = "Yes";
         reaction = "(Well that's a Surprise)";
@@ -61,6 +62,7 @@ function check(){
 
     var cElement = document.getElementById('cprice');
     cElement.textContent = "Current 5 Day Growth: " + growthrate;
+    cConversion.textContent = "Current Exchange to USD: $" + current;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
