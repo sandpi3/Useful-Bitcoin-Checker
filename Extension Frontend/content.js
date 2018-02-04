@@ -1,75 +1,48 @@
-function check(){
-    var bitcoinOpen = "https://api.coindesk.com/v1/bpi/historical/open.json";
-    var bitcoinCurrent = "https://api.coindesk.com/v1/bpi/currentprice.json";
-    var suggestionData = "https://python-mchacks-btc-backend.firebaseio.com/data/.json"
-
-    var s;
-
-
-    var open;
-    var current;
-    
-    $.ajax({url: bitcoinOpen, dataType: 'json', async: false, success:function(data) {
-        var i = 0;
-        for (var key in data.bpi) {
-            if (i == Object.keys(data.bpi).length - 1 && data.bpi.hasOwnProperty(key)) {           
-                open = data.bpi[key];
-                open = open.replace(",", "");
-            }
-            ++i;
-        }
-    }});
-    
-    $.ajax({url: bitcoinCurrent, dataType: 'json', async: false, success:function(data) {
-        current = data.bpi.USD.rate;
-        current = current.replace(",", "");
-    }});
-
-    
-    $.ajax({url: suggestionData, dataType: 'json', async: false, success:function(data) {
-           suggest = data.key.idea;
-           suggest = suggest.replace(",", "");
-           growthrate = data.key.growth;
-           growthrate = growthrate.replace(",", "")
-           reactiontext = data.key.reaction;
-           reactiontext = reactiontext.replace(",", "")
-    }});
-    
-    
-    var answer;
-    var reaction;
-
-
-    var pElement = document.getElementById('answer');
-    var rElement = document.getElementById('reaction');
-    var cConversion = document.getElementById('cconversion');
-    if (suggest == "Buy"){
-        answer = "Yes";
-        reaction = "(Well that's a Surprise)";
-        rElement.setAttribute("style", "font-weight: bold; color: #00ff00;")
-        pElement.setAttribute("style", "font-weight: bold; color: #00ff00;")
-    }else if (suggest == "Sell"){
-        answer = "No"
-        reaction = "(That's not surprising at all)";
-        rElement.setAttribute("style", "font-weight: bold; color: #ff0000;")
-        pElement.setAttribute("style", "font-weight: bold; color: #ff0000;")
-    } else {
-        
-    }
-
-    pElement.textContent = suggest;
-    rElement.textContent = reactiontext;
-
-    var cElement = document.getElementById('cprice');
-    cElement.textContent = "Current 5 Day Growth: " + growthrate;
-    cConversion.textContent = "Current Exchange to USD: $" + current;
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     var checkPageButton = document.getElementById('recheck');
     checkPageButton.addEventListener('click', function() {
 
-        check();
+        var bitcoinCurrent = "https://api.coindesk.com/v1/bpi/currentprice.json";
+        var suggestionData = "https://python-mchacks-btc-backend.firebaseio.com/data/.json"
+        var current;
+        var suggest;
+        
+        $.ajax({url: bitcoinCurrent, dataType: 'json', async: false, success:function(data) {
+            current = data.bpi.USD.rate;
+            current = current.replace(",", "");
+        }});
+        
+        $.ajax({url: suggestionData, dataType: 'json', async: false, success:function(data) {
+               suggest = data.key.idea;
+               suggest = suggest.replace(",", "");
+               growthrate = data.key.growth;
+               growthrate = growthrate.replace(",", "")
+        }});
+        
+        var reaction;
+
+        var noAnswers = ["That's not surprising at all", "I'm not even surprised", "Try another time", "It's a steep slope", "Only in your imagination", "Why would you think that?", "Never believe it would happen", "How did it even go up in the first place?", "Maybe in a parallel universe"];
+        var yesAnswers = ["How?", "What in the world?", "Well that's a Surprise", "I'm genuinely amazed", "Well I'll be damned", "Looks like miracles do happen", "Should've bought some 9 years ago", "Am I dreaming?", "Are you sure this is correct?", "I hope this is a joke", "No way", "I don't believe it"];
+    
+        var pElement = document.getElementById('answer');
+        var rElement = document.getElementById('reaction');
+        var cConversion = document.getElementById('cconversion');
+        if (suggest == "Buy"){
+            reaction = yesAnswers[Math.floor(Math.random() * yesAnswers.length)];
+            rElement.setAttribute("style", "font-weight: bold; color: #00ff00;")
+            pElement.setAttribute("style", "font-weight: bold; color: #00ff00;")
+        }else if (suggest == "Sell"){
+            reaction = noAnswers[Math.floor(Math.random() * noAnswers.length)];
+            rElement.setAttribute("style", "font-weight: bold; color: #ff0000;")
+            pElement.setAttribute("style", "font-weight: bold; color: #ff0000;")
+        }
+
+        pElement.textContent = suggest;
+        rElement.textContent = reaction;
+    
+        var cElement = document.getElementById('cprice');
+        cElement.textContent = "Current 5 Day Growth: " + growthrate;
+        cConversion.textContent = "Current Exchange to USD: $" + current;
      
     }, false);
   }, false);
