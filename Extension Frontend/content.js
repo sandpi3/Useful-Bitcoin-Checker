@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         var reaction;
 
-        var noAnswers = ["That's not surprising at all", "I'm not even surprised", "Try another time", "It's a steep slope", "Only in your imagination", "Why would you think that?", "Never believe it would happen", "How did it even go up in the first place?", "Maybe in a parallel universe"];
-        var yesAnswers = ["How?", "What in the world?", "Well that's a Surprise", "I'm genuinely amazed", "Well I'll be damned", "Looks like miracles do happen", "Should've bought some 9 years ago", "Am I dreaming?", "Are you sure this is correct?", "I hope this is a joke", "No way", "I don't believe it"];
+        var noAnswers = ["That's not surprising at all", "I'm not even surprised", "Try another time", "It's a steep slope", "How did it even go up in the first place?"];
+        var yesAnswers = ["What in the world?", "Well that's a surprise", "I'm genuinely amazed", "Well I'll be damned", "Looks like miracles do happen", "Should've bought some 9 years ago", "Are you sure this is correct?"];
     
         var pElement = document.getElementById('answer');
         var rElement = document.getElementById('reaction');
