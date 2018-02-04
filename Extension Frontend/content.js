@@ -28,13 +28,18 @@ document.addEventListener('DOMContentLoaded', function() {
         var rElement = document.getElementById('reaction');
         var cConversion = document.getElementById('cconversion');
         if (suggest == "Buy"){
+            suggest = "Yes"
             reaction = yesAnswers[Math.floor(Math.random() * yesAnswers.length)];
             rElement.setAttribute("style", "font-weight: bold; color: #00ff00;")
             pElement.setAttribute("style", "font-weight: bold; color: #00ff00;")
         }else if (suggest == "Sell"){
+            suggest = "No"
             reaction = noAnswers[Math.floor(Math.random() * noAnswers.length)];
             rElement.setAttribute("style", "font-weight: bold; color: #ff0000;")
             pElement.setAttribute("style", "font-weight: bold; color: #ff0000;")
+        }else{
+            suggest = "No"
+            reaction = "Not even changing"
         }
 
         pElement.textContent = suggest;
