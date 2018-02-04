@@ -1,11 +1,21 @@
 .button:hover {
-    background: #ddad52;
+    background: #dba134;
+    background-image: -webkit-linear-gradient(top, #fdc03c, #dba134);
+    background-image: -moz-linear-gradient(top, #fdc03c, #dba134);
+    background-image: -ms-linear-gradient(top, #fdc03c, #dba134);
+    background-image: -o-linear-gradient(top, #fdc03c, #dba134);
+    background-image: linear-gradient(to bottom, #fdc03c, #dba134);
     transition-duration: 0.4s;
     text-decoration: none;
 }
 
 .button:active {
     background: #d36a09;
+    background-image: -webkit-linear-gradient(top, #c76d31, #d36a09);
+    background-image: -moz-linear-gradient(top, #c76d31, #d36a09);
+    background-image: -ms-linear-gradient(top, #c76d31, #d36a09);
+    background-image: -o-linear-gradient(top, #c76d31, #d36a09);
+    background-image: linear-gradient(to bottom, #c76d31, #d36a09);
     transition-duration: 0.5s;
     text-decoration: none;
 }
@@ -20,11 +30,11 @@
     padding: 5px 15px 5px 15px;
     text-align: center;
     position: relative;
-    top: -25px;
+    top: -50px;
 }
 
 .header {
-    color: #ffffff;
+    color: #ffff00;
     padding: 1px;
 }
 
@@ -33,17 +43,20 @@
 }
 
 .price{
-    font-size: 10px;
+    font-size: 16px;
     padding: 1px;
     position: relative;
-    top: -35px;
+    top: -50px;
+    /* background-color: orange; */
 }
 
 body{
     width:275px;
-    height:100px;
+    height: 175px;
     text-align: center;
-    background:  #ff9f29;
+
+    background:  #ff6600;
+
  }
 
  .answer {
@@ -52,9 +65,10 @@ body{
      position: relative;
      top: -25px;
  }
+
  .reaction {
      font-size: 12px;
      padding: 0px;
      position: relative;
      top: -45px;
-}
+ }
