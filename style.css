@@ -1,5 +1,5 @@
 .button:hover {
-    background: #f0b039;
+    background: #ddad52;
     transition-duration: 0.4s;
     text-decoration: none;
 }
@@ -11,7 +11,6 @@
 }
 
 .button {
-    outline: none;
     -webkit-box-shadow: 0px 1px 3px #666666;
     -moz-box-shadow: 0px 1px 3px #666666;
     box-shadow: 0px 1px 3px #666666;
@@ -20,10 +19,13 @@
     background: #dba134;
     padding: 5px 15px 5px 15px;
     text-align: center;
+    position: relative;
+    top: -25px;
 }
 
 .header {
-    color: #ffff00;
+    color: #ffffff;
+    padding: 1px;
 }
 
 .division {
@@ -33,19 +35,26 @@
 .price{
     font-size: 10px;
     padding: 1px;
+    position: relative;
+    top: -35px;
 }
 
 body{
     width:275px;
-    height:150px;
+    height:100px;
     text-align: center;
-    background:  #ff6600;
-
+    background:  #ff9f29;
  }
 
  .answer {
-     font-size: 18px;
-     padding: 1px;
+     font-size: 30px;
+     padding: 0px;
+     position: relative;
+     top: -25px;
  }
-
- 
+ .reaction {
+     font-size: 12px;
+     padding: 0px;
+     position: relative;
+     top: -45px;
+}
