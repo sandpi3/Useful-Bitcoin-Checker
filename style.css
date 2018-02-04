@@ -1,26 +1,17 @@
 .button:hover {
-    background: #dba134;
-    background-image: -webkit-linear-gradient(top, #fdc03c, #dba134);
-    background-image: -moz-linear-gradient(top, #fdc03c, #dba134);
-    background-image: -ms-linear-gradient(top, #fdc03c, #dba134);
-    background-image: -o-linear-gradient(top, #fdc03c, #dba134);
-    background-image: linear-gradient(to bottom, #fdc03c, #dba134);
+    background: #f0b039;
     transition-duration: 0.4s;
     text-decoration: none;
 }
 
 .button:active {
     background: #d36a09;
-    background-image: -webkit-linear-gradient(top, #c76d31, #d36a09);
-    background-image: -moz-linear-gradient(top, #c76d31, #d36a09);
-    background-image: -ms-linear-gradient(top, #c76d31, #d36a09);
-    background-image: -o-linear-gradient(top, #c76d31, #d36a09);
-    background-image: linear-gradient(to bottom, #c76d31, #d36a09);
     transition-duration: 0.5s;
     text-decoration: none;
 }
 
 .button {
+    outline: none;
     -webkit-box-shadow: 0px 1px 3px #666666;
     -moz-box-shadow: 0px 1px 3px #666666;
     box-shadow: 0px 1px 3px #666666;
@@ -40,22 +31,21 @@
 }
 
 .price{
-    font-size: 14px;
+    font-size: 10px;
     padding: 1px;
-    /* background-color: orange; */
 }
 
 body{
     width:275px;
     height:150px;
     text-align: center;
-
     background:  #ff6600;
 
  }
 
  .answer {
-     font-size: 16px;
+     font-size: 18px;
      padding: 1px;
-     /* background-color: orange; */
  }
+
+ 
